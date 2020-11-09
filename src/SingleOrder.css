@@ -1,0 +1,23 @@
+#single-order-container::before {
+    content: "";
+    display: flex;
+    height: 30vh;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(225deg, #006d68, #003b38);
+    z-index: -1;
+}
+
+.single-order-content {
+    width: 1195.25px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.single-order-content--shadow {
+    box-shadow: 0 10px 40px 0 rgba(0,0,0,0.2);
+    border-radius: 8px;
+    background-color: white;
+}
