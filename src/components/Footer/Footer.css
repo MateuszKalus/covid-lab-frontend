@@ -1,29 +1,3 @@
-.signin-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.bottom-section {
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    height: 300px;
-    width: 100vw;
-    background: linear-gradient(225deg, #006d68, #003b38);
-}
-
-.login-page {
-    height: auto;
-    overflow: scroll;
-    display: block;
-}
-
 .footer {
     width: 100%;
     display: flex;
@@ -35,6 +9,16 @@
     margin-top: -65px;
 }
 
+.fixed-footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.single-order-page-footer {
+    margin-top: 60px;
+}
+
+
 .footer-content {
     width: 100%;
     padding: 0 85.375px;
@@ -44,7 +28,21 @@
     align-items: center;
     justify-content: space-between;
 }
+@media screen and (max-width: 850px) {
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+    }
 
+    .footer {
+        height: 100px;
+        margin-top: 0px;
+
+    }
+}
 .footer-copyright {
     font-family: "Roboto",sans-serif;
     font-weight: 400;

@@ -1,0 +1,28 @@
+.signin-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.bottom-section {
+    position: relative;
+    margin-top: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    height: 300px;
+    width: 100vw;
+    background: linear-gradient(225deg, #006d68, #003b38);
+}
+
+.login-page {
+    height: auto;
+    overflow: scroll;
+    display: block;
+}
+
+

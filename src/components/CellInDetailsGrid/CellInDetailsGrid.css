@@ -1,0 +1,60 @@
+.order-details-cell {
+    box-sizing: border-box;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px;
+    margin-bottom: 25px;
+}
+
+.border-div {
+    width: 100%;
+    border-bottom: 1px solid #e6e6e6
+}
+
+.cell-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.cell-smaller {
+    flex-basis: 33.333333%
+}
+
+
+.cell-label {
+    font-family: "Roboto",sans-serif;
+    font-weight: 500;
+    font-size: .875rem;
+    line-height: 1rem;
+    letter-spacing: 0.1px;
+    color: #707070;
+    padding-bottom: 2px;
+}
+
+.cell-value {
+    font-family: "Roboto",sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.1px;
+    display: flex;
+    color: #262626;
+}
+
+.cell-bigger {
+    flex-basis: 100%
+}
+
+@media screen and (max-width: 1200px) {
+    .cell-smaller {
+        flex-basis: 50%
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .cell-smaller {
+        flex-basis: 100%
+
+    }
+}

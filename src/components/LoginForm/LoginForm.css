@@ -39,11 +39,11 @@
 }
 
 .single-order-image {
-    background-image: url("./images/2.png");
+    background-image: url("../../images/2.png");
 }
 
 .register-new-order-image {
-    background-image: url("./images/3.png");
+    background-image: url("../../images/3.png");
 }
 
 .login-form__headline {
@@ -74,8 +74,8 @@
     display: block;
 }
 
-.check-results-btn {
-    background-color:#fb3e0f;
+.common-btn {
+    background-color: #fd5724;
     border-radius:28px;
     display:inline-block;
     cursor:pointer;
@@ -85,9 +85,18 @@
     padding:11px 16px;
     text-decoration:none;
     margin: 10px;
+    margin-top: 30px;
 }
 
-.check-results-btn:active {
+.login-form-controllers {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.common-btn:active {
     position:relative;
     transform: scale(0.99);
     bottom: 1px;

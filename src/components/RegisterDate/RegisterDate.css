@@ -1,0 +1,37 @@
+.register-date {
+    justify-content: space-between;
+}
+
+
+
+.register-date::before {
+
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 4px;
+    background-color: #ec6607;
+    height: 100%;
+}
+
+.title-headline {
+    margin: 0;
+    font-family: "Roboto",sans-serif;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    color: #262626;
+}
+
+.title-description {
+    margin: 0;
+    font-family: "Roboto",sans-serif;
+    font-weight: 300;
+    font-size: 2.3125rem;
+    line-height: 3.5rem;
+    color: #ec6607;
+}
+
+.download-results-btn {
+    margin: 0 !important;
+}

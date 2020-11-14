@@ -1,0 +1,15 @@
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.content {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+
+}
+

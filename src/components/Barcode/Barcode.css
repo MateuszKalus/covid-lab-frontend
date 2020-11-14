@@ -1,0 +1,15 @@
+.barcode {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 25px 60px;
+
+}
+
+#barcode-img {
+    width: 150px;
+}
+
+.barcode-descr {
+    margin-left: 10px;
+}

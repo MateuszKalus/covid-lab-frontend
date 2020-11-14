@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Navbar.css';
-import logo from './images/logo.png'
+import logo from '../../images/logo.png'
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -12,7 +12,8 @@ class Navbar extends React.Component {
     render() {
         return (
             <nav className={'navbar'}>
-                <img id='logo' src={logo}/>
+                <img id='logo' src={logo} alt={'logo'}/>
+                <a className={`logout-button ${this.props.logged ? '' : 'invisible'}`} href='' onClick={this.props.logOut}>LogOut</a>
             </nav>
         );
     }
