@@ -5,7 +5,7 @@
     justify-content: flex-start;
     flex-wrap: wrap;
 
-    padding: 0 85.375px;
+    padding: 0 40px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -13,25 +13,14 @@
 @media screen and (max-width: 1024px) {
     .records-grid {
         padding: 0px 10px;
+    }
 
+    .title-with-border-at-left {
+        padding: 15px 30px;
     }
 }
 
-
-
-
-
-
 .records-headline {
     justify-content: flex-start;
-}
-
-.records-headline::before {
-
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 4px;
-    background-color: #ec6607;
-    height: 100%;
+    margin-bottom: 30px;
 }

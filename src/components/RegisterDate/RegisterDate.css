@@ -1,18 +1,26 @@
 .register-date {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 
+@media screen and (max-width: 500px) {
+    .register-date {
+        flex-direction: column;
 
-
-.register-date::before {
-
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 4px;
-    background-color: #ec6607;
-    height: 100%;
+    }
 }
+
+@media screen and (max-width: 330px) {
+    .title-description {
+        font-size: 1.4rem !important;
+    }
+
+    .title-headline {
+        font-size: 0.9rem !important;
+    }
+}
+
 
 .title-headline {
     margin: 0;

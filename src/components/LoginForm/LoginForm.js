@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {KeyboardDatePicker} from "@material-ui/pickers";
+import React, {useEffect, useState} from "react";
+
 
 import './LoginForm.css';
 
@@ -9,6 +9,11 @@ import {
     ThemeProvider
 } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+
+import ForRegister from "./ForRegister/ForRegister";
+import ForLogin from "./ForLogin/ForLogin";
+import ForGettingSingleOrder from "./ForGettingSingleOrder/ForGettingSingleOrder";
+import AlertDialog from "../AlertDialog/AlertDialog";
 
 
 const theme = createMuiTheme({
@@ -49,13 +54,39 @@ const formatDate = (date) => {
 
 export default function LoginForm(props) {
 
+
+    const headlines = {
+        login: 'Logowanie',
+        register: 'Rejestracja'
+    }
+
     const [selectedDate, handleDateChange] = useState(new Date('02-18-1993'));
     const [orderNo, setOrderNo] = useState('');
+    const [page, setPage] = useState('login');
+
 
     const checkResults = () => {
         const birthday_date = formatDate(selectedDate);
-        props.logIn(orderNo, birthday_date);
-    }
+        props.logInToOrder(orderNo, birthday_date);
+    };
+
+    const changePageFor = (page) => {
+        if (page === 'login') setPage('login');
+        else if (page === 'register') setPage('register');
+    };
+
+    const generatePage = () => {
+        if (page === 'login') return <ForLogin theme={theme}
+                                               classNames={"swing-in-top-fwd"}
+                                               changePageFor={changePageFor}
+                                               loginToAccount={props.loginToAccount}/>;
+
+        else if (page === 'register') return <ForRegister theme={theme}
+                                                          classNames={"swing-in-top-fwd"}
+                                                          changePageFor={changePageFor}
+                                                          registerNewClient={props.registerNewClient}/>;
+    };
+
 
     if (props.form_type === 'single-order-login') {
         return (
@@ -73,61 +104,25 @@ export default function LoginForm(props) {
 
                 </div>
 
-                <div className={'login-form-controllers'}>
-                    <ThemeProvider theme={theme}>
-                        <TextField
-                            margin='normal'
-                            onChange={(event) => setOrderNo(event.target.value)}
-                            id="order_number_field"
-                            label="Numer zlecenia"
-                            variant="outlined"
-                            color="primary"
-                            margin='dense'
-                            fullWidth={true}
-                            inputProps={{maxLength: 10}}
-                        />
-
-                        <KeyboardDatePicker
-                            defaultValue="2017-05-24"
-                            openTo={'year'}
-                            margin='normal'
-                            fullWidth={true}
-                            autoOk
-                            color="primary"
-                            margin='dense'
-                            rifmFormatter="dd/MM/yyyy"
-                            variant="inline"
-                            placeholder="dd/MM/yyyy"
-                            inputVariant="outlined"
-                            label="Data urodzenia"
-                            format="dd/MM/yyyy"
-                            value={selectedDate}
-                            InputAdornmentProps={{position: "start"}}
-                            onChange={date => handleDateChange(date)}
-                        />
-                    </ThemeProvider>
-
-                    <a className={'common-btn'} href={"#"} onClick={checkResults}>Sprawdź wyniki</a>
-                    <a className={'check-rules'}>Zapoznaj się z Regulaminem</a>
-                </div>
-
-
+                <ForGettingSingleOrder theme={theme}
+                                       handleDateChange={handleDateChange}
+                                       setOrderNo={setOrderNo}
+                                       selectedDate={selectedDate}
+                                       checkResults={checkResults}/>
             </div>
+
+
         )
 
     } else if (props.form_type === 'register-new-order') {
         return (
             <div className={'login-form'}>
                 <div className={'form-image register-new-order-image'}></div>
-                <p className="login-form__headline">Zarejestruj nowe zlecenie</p>
-                <p className="login-form__description">
-                    Wprowadź numer zlecenia oraz datę urodzenia pacjenta, aby otrzymać dostęp do wyników badań.
-
-
-                </p>
-
-                {/*<input type="text" id="order-number" placeholder=" " maxLength="10"/>*/}
-
+                <p className="login-form__headline">{headlines[page]}</p>
+                <div className="login-form__description">
+                    Zaloguj się, aby zarejestrować zlecenie. Jeśli nie masz jeszcze konta, musisz się zarejestrować.
+                </div>
+                    {generatePage()}
 
             </div>
         )

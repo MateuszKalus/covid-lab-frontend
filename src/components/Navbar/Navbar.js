@@ -13,7 +13,7 @@ class Navbar extends React.Component {
         return (
             <nav className={'navbar'}>
                 <img id='logo' src={logo} alt={'logo'}/>
-                <a className={`logout-button ${this.props.logged ? '' : 'invisible'}`} href='' onClick={this.props.logOut}>LogOut</a>
+                <a className={`logout-button ${this.props.page !== 'signIn' ? '' : 'invisible'}`} href='' onClick={this.props.logOut}></a>
             </nav>
         );
     }

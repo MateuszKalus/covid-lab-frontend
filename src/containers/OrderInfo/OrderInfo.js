@@ -40,7 +40,7 @@ const OrderInfo = (props) => {
 
     return (
         <div className={"records-container"}>
-            <div className={"title-with-border-at-left records-headline"}>ASD</div>
+            <div className={"title-with-border-at-left records-headline"}>Dane zlecenia</div>
 
             <div className={"records-grid"}>
 

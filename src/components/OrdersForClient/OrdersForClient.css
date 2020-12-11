@@ -1,0 +1,51 @@
+.cell-1_4 {
+    flex-basis: 25%
+}
+
+@media screen and (max-width: 1024px) {
+    .cell-1_4 {
+        flex-basis: 50%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .cell-1_4 {
+        flex-basis: 100%;
+    }
+}
+
+
+.result-cell {
+    border-bottom: 0px solid black;
+}
+
+.orders-for-client-grid {
+
+    background-color: #eeeeee;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    padding: 30px 40px 0px 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 500px) {
+    .orders-for-client-grid {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+.doctor-check-result-btn {
+    margin-right: 5px;
+}
+
+.doctor-check-result-btn:last-of-type {
+    margin-right: 0px;
+}

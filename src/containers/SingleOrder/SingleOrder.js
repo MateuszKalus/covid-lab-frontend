@@ -5,6 +5,7 @@ import Barcode from '../../components/Barcode/Barcode'
 import RegisterDate from "../../components/RegisterDate/RegisterDate";
 import OrderInfo from "../OrderInfo/OrderInfo";
 import Footer from "../../components/Footer/Footer"
+import Result from "../../components/Result/Result";
 
 class SingleOrder extends React.Component {
     constructor(props) {
@@ -16,6 +17,7 @@ class SingleOrder extends React.Component {
 
     componentDidMount() {
         this.setState({order: this.props.currentOrder})
+        console.log(this.props.currentOrder)
     }
 
     render() {
@@ -25,15 +27,13 @@ class SingleOrder extends React.Component {
                     <div className={'single-order-card single-order-card--shadow'}>
                         <Barcode orderNumber={this.state.order.order_number}/>
                         <RegisterDate register_date={this.state.order.register_date}/>
+                        <Result orderInfo={this.state.order}/>
                     </div>
 
                     <div className={'single-order-card single-order-card--shadow'}>
                         <OrderInfo orderInfo={this.state.order}/>
                     </div>
 
-                    <div className={'single-order-card single-order-card--shadow'}>
-                        <OrderInfo orderInfo={this.state.order}/>
-                    </div>
 
                 </div>
 

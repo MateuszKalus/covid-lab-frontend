@@ -2,14 +2,11 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-
+  overflow: hidden;
 }
 
 .content {
-  height: auto;
-  display: flex;
+  overflow: auto;
   flex-direction: column;
-  overflow: scroll;
-
 }
 

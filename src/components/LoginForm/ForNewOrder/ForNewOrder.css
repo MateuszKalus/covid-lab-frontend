@@ -1,0 +1,19 @@
+.new-order-container {
+    width: 100%;
+    padding-left: 35%;
+    padding-right: 35%;
+}
+
+@media screen and (max-width: 1024px) {
+    .new-order-container {
+        padding-left: 25%;
+        padding-right: 25%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .new-order-container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}

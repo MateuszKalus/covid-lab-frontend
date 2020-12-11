@@ -1,0 +1,117 @@
+.doctor-link-content {
+    margin-top: -60px;
+    font-family: "Roboto",sans-serif;
+    color: #202020;
+    background-color: white;
+    padding: 10px 30px 10px 0px;
+    border-radius: 10px;
+
+    /*height: 100px;*/
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.doctor-link-content p {
+    margin: 0;
+}
+
+.doctor-link-headline {
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.doctor-link-description {
+    font-weight: 400;
+    font-size: .8125rem;
+    line-height: 1.25rem;
+    margin: 4px auto 16px;
+}
+
+#doc-img {
+    width: 200px;
+}
+
+.doctor-login-btn {
+    background-color: transparent;
+    border-radius:28px;
+    border: 2px solid #000000;
+    display:inline-block;
+    cursor:pointer;
+    color: #000000;
+    font-family:Arial;
+    font-size:13px;
+    padding:11px 16px;
+    text-decoration:none;
+    margin: 10px;
+    margin-top: 10px;
+
+}
+
+.doctor-login-btn:active {
+    position:relative;
+    transform: scale(0.99);
+    bottom: 1px;
+}
+
+textarea:focus, .doctor-login-btn:focus{
+    outline: none;
+}
+
+.doctor-link-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between ;
+    width: content-box;
+}
+
+.doctor-link-strings {
+    height: 100%;
+    /*width: 400px;*/
+
+    display: block;
+    text-align: left;
+
+}
+
+.doctor-link-form {
+    width: 250px;
+}
+
+@media screen and (max-width: 850px) {
+    .doctor-link-content {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+        margin:20px;
+        margin-top: -80px;
+
+    }
+
+    .doctor-link-strings {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .doctor-link-title {
+        text-align: center;
+    }
+
+    .doctor-link-form {
+    text-align: center;
+        width: 80%;
+        margin: 0px;
+    }
+
+    .bottom-section {
+        height: 600px;
+    }
+
+}
+
