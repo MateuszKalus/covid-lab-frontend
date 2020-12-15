@@ -115,3 +115,7 @@ textarea:focus, .doctor-login-btn:focus{
 
 }
 
+.tooltiptext p {
+    margin-top: 10px;
+}
+

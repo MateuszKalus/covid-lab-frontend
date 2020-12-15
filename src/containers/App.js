@@ -10,6 +10,7 @@ import AlertDialog from "../components/AlertDialog/AlertDialog";
 import ClientPage from "./ClientPage/ClientPage";
 import DoctorPage from "./DoctorPage/DoctorPage";
 
+import { API } from "./CONFIG"
 
 class App extends React.Component {
     constructor(props) {
@@ -72,7 +73,7 @@ class App extends React.Component {
     };
 
     logInToOrder = (order_number, birthday) => {
-        fetch('http://localhost:3001/getOrder', {
+        fetch(API.getOrder, {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
@@ -130,7 +131,7 @@ class App extends React.Component {
         if (password === '') password = null;
         if (phone === '') phone = null;
 
-        fetch('http://localhost:3001/registerNewClient', {
+        fetch(API.registerNewClient, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -175,7 +176,7 @@ class App extends React.Component {
     }
 
     loginToAccount = (email, password) => {
-        fetch('http://localhost:3001/getClient', {
+        fetch(API.getClient, {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
@@ -213,13 +214,8 @@ class App extends React.Component {
             });
     }
 
-    changePage = (page) => {
-        this.setState({page: page})
-
-    }
-
     loginToDoctorAccount = (email, password) => {
-        fetch('http://localhost:3001/getDoctor', {
+        fetch(API.getDoctor, {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
@@ -279,6 +275,7 @@ class App extends React.Component {
                 {this.state.dialog !== '' ?
                     <AlertDialog showDialog={this.resetAlertState} dialog={this.state.dialog}/> : null}
                 <Navbar logOut={this.logOut} page={this.state.page}/>
+
                 <div className={'content'}>
                     {pages[this.state.page]}
                 </div>

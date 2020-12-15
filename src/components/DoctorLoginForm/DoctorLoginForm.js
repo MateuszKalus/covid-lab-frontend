@@ -22,7 +22,15 @@ export default function DoctorLoginForm(props) {
     });
 
     return (
-        <div className={'doctor-link-content'}>
+        <div className={'doctor-link-content tooltip tooltip2'}>
+            <div className="tooltiptext">
+                W wersji demonstracyjnej do dyspozycji są dwa przykładowe konta lekarza:
+                <p><strong>e-mail: m.iksinski@gmail.com<br/>hasło: miksinski123</strong></p>
+                <p><strong>e-mail: s.cabacki@gmail.com<br/>hasło: scabacki456</strong></p>
+
+
+            </div>
+
             <img id={'doc-img'} src={DocPic} alt={'doc'} />
             <div className={'doctor-link-strings'}>
                 <div className={'doctor-link-title'}>
@@ -57,7 +65,6 @@ export default function DoctorLoginForm(props) {
                         />
 
                     </ThemeProvider>
-
 
                     <input type={'submit'} className={'doctor-login-btn'} onClick={() => props.loginToDoctorAccount(email, password)} value={'Sprawdź wyniki'}/>
                 </div>

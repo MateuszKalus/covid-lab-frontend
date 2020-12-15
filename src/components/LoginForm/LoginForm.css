@@ -175,3 +175,37 @@ textarea:focus, .common-btn:focus{
     visibility: visible;
     opacity: 1;
 }
+
+.tooltip2 .tooltiptext::after {
+    top: 50%;
+    left: 0%;
+    margin-left: -10px;
+    border-color: transparent black transparent transparent;
+}
+
+.tooltip2 .tooltiptext {
+    margin-left: 30px;
+    bottom: 50%;
+    left: 100%;
+    transform: translateY(50%);
+}
+
+@media screen and (max-width: 1200px) {
+    .tooltip2 .tooltiptext::after {
+        top: 100%;
+        left: 50%;
+        margin-left: 0px;
+        border-color: black transparent transparent transparent;
+    }
+
+    .tooltip2 .tooltiptext {
+        margin-bottom: 20px;
+        margin-left: 0px;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+
+}
+

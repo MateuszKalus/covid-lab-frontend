@@ -3,11 +3,9 @@ import React from 'react';
 import './DoctorPage.css';
 import Footer from "../../components/Footer/Footer"
 import OrdersForClient from "../../components/OrdersForClient/OrdersForClient";
-import ForNewOrder from "../../components/LoginForm/ForNewOrder/ForNewOrder";
-import {MuiPickersUtilsProvider} from "@material-ui/pickers";
-import DateFnsUtils from "@date-io/date-fns";
-import plLocale from "date-fns/locale/pl";
 import AlertDialog from "../../components/AlertDialog/AlertDialog";
+
+import { API } from "../CONFIG";
 
 
 
@@ -36,7 +34,7 @@ class DoctorPage extends React.Component {
     }
 
     modifyOrder = (order_number, result) => {
-        fetch('http://localhost:3001/modifyOrder', {
+        fetch(API.modifyOrder, {
             method: 'PUT', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
@@ -61,7 +59,7 @@ class DoctorPage extends React.Component {
     }
 
     getOrders() {
-        fetch('http://localhost:3001/getOrdersForDoctor', {
+        fetch(API.getOrdersForDoctor, {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
