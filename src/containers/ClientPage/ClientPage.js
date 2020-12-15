@@ -1,6 +1,8 @@
 import React from 'react';
 
 import './ClientPage.css';
+import { API } from '../CONFIG'
+
 import Footer from "../../components/Footer/Footer"
 import OrdersForClient from "../../components/OrdersForClient/OrdersForClient";
 import ForNewOrder from "../../components/LoginForm/ForNewOrder/ForNewOrder";
@@ -44,7 +46,7 @@ class ClientPage extends React.Component {
     }
 
     getOrders() {
-        fetch('http://localhost:3001/getOrdersForClient', {
+        fetch(API.getOrdersForClient, {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
@@ -75,7 +77,6 @@ class ClientPage extends React.Component {
     }
 
     componentDidMount() {
-        // this.setState({client: this.props.currentClient})
         console.log('ehh', this.props.currentClient)
         this.getOrders()
 
@@ -90,7 +91,7 @@ class ClientPage extends React.Component {
         const [name, surname, pesel, email, birthday] = props;
 
 
-        fetch('http://localhost:3001/createNewOrder', {
+        fetch(API.createNewOrder, {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
